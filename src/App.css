@@ -1,0 +1,286 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #f5efe6;
+  background: #11100e;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top, rgba(179, 54, 18, 0.18), transparent 34rem),
+    linear-gradient(180deg, #151310 0%, #0d0c0b 100%);
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.site {
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 70px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 91, 20, 0.22),
+    rgba(177, 50, 12, 0.08) 40%,
+    transparent 70%
+  );
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.brand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.82;
+  margin-bottom: 30px;
+}
+
+.brand-easy {
+  font-size: clamp(4rem, 12vw, 8.5rem);
+  font-weight: 950;
+  letter-spacing: -0.08em;
+  color: #f4eee5;
+}
+
+.brand-schmiede {
+  font-size: clamp(2rem, 6vw, 4.3rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: #c3451a;
+}
+
+.stamp {
+  position: relative;
+  z-index: 1;
+  border: 3px solid #d74b1d;
+  color: #d74b1d;
+  padding: 8px 16px;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+  transform: rotate(-5deg);
+  margin-bottom: 28px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(2rem, 5vw, 4rem);
+  max-width: 900px;
+  margin: 0 0 18px;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  color: #bdb3a5;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.forge-button {
+  position: relative;
+  z-index: 1;
+  border: 1px solid #d45527;
+  background: linear-gradient(180deg, #d65321, #8d2b0e);
+  color: white;
+  padding: 15px 24px;
+  border-radius: 6px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  box-shadow: 0 12px 40px rgba(174, 53, 15, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.forge-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 45px rgba(218, 78, 25, 0.34);
+}
+
+.forge-message {
+  position: relative;
+  z-index: 1;
+  margin-top: 18px;
+  color: #e1a178;
+  font-style: italic;
+}
+
+.products,
+.contact-info {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.section-heading span,
+.eyebrow {
+  color: #c86a42;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.section-heading h2,
+.custom-software h2,
+.contact-info h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 8px 0 28px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-card {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
+  border: 1px solid #38322c;
+  border-radius: 10px;
+  padding: 24px;
+  min-height: 190px;
+  box-shadow: inset 0 1px rgba(255,255,255,0.04);
+}
+
+.product-card h3 {
+  font-size: 1.8rem;
+  margin: 22px 0 12px;
+}
+
+.product-card p {
+  color: #aaa095;
+  line-height: 1.6;
+}
+
+.status {
+  display: inline-block;
+  border: 1px solid #6e6258;
+  border-radius: 999px;
+  padding: 5px 9px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #d5c9bb;
+}
+
+.custom-software {
+  max-width: 1120px;
+  margin: 30px auto;
+  padding: 50px 38px;
+  border: 1px solid #5d321f;
+  background:
+    linear-gradient(120deg, rgba(165, 49, 13, 0.2), rgba(255,255,255,0.02));
+  border-radius: 12px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.custom-software > div {
+  max-width: 760px;
+}
+
+.custom-software p,
+.contact-info p {
+  color: #b5aa9d;
+  line-height: 1.7;
+}
+
+.contact-button {
+  display: inline-block;
+  background: #e4ddd4;
+  color: #17130f;
+  padding: 14px 20px;
+  border-radius: 6px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contact-info {
+  text-align: center;
+}
+
+footer {
+  border-top: 1px solid #2f2a25;
+  padding: 30px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  color: #81776e;
+  font-size: 0.9rem;
+}
+
+.forge-active .hero::before {
+  animation: glow 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    transform: scale(0.92);
+    opacity: 0.65;
+  }
+
+  to {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-software {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 32px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
