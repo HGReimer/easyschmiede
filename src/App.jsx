@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import emailjs from "@emailjs/browser"
 import './App.css'
 
 function playForgeIntro() {
@@ -182,10 +183,37 @@ const products = [
 
 function App() {
   const [started, setStarted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendMessage, setSendMessage] = useState("")
 
   const startForge = () => {
     setStarted(true)
     playForgeIntro()
+  }
+
+  const sendContactForm = async (event) => {
+    event.preventDefault()
+    const form = event.currentTarget
+
+    setSending(true)
+    setSendMessage("")
+
+    try {
+      await emailjs.sendForm(
+        "service_3gponym",
+        "template_48ld5j1",
+        form,
+        { publicKey: "G-ZQwtoRADyFvP_Zc" }
+      )
+
+      form.reset()
+      setSendMessage("Danke! Deine Anfrage wurde erfolgreich gesendet.")
+    } catch (error) {
+      console.error("EmailJS Fehler:", error.status, error.text, error)
+      setSendMessage("Die Anfrage konnte nicht gesendet werden. Bitte versuche es noch einmal.")
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -249,14 +277,46 @@ function App() {
         </a>
       </section>
 
-      <section className="contact-info" id="contact-info">
-        <span className="eyebrow">KONTAKT</span>
-        <h2>Sprich mit der EasySchmiede.</h2>
-        <p>
-          Du hast eine Idee oder möchtest eine eigene Lösung entwickeln lassen?
-          Die Kontaktadresse ergänzen wir hier als Nächstes.
-        </p>
-      </section>
+        <section className="contact-info" id="contact-info">
+          <span className="eyebrow">KONTAKT</span>
+          <h2>Sprich mit der EasySchmiede.</h2>
+          <p>
+            Du hast eine Idee oder möchtest eine eigene Lösung entwickeln lassen?
+            Schreib uns kurz, worum es geht. Wir schauen gemeinsam, was sinnvoll umsetzbar ist.
+          </p>
+
+          <form className="contact-form" onSubmit={sendContactForm}>
+            <div className="contact-form-row">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Dein Name" required />
+              </label>
+
+              <label>
+                E-Mail
+                <input type="email" name="email" placeholder="name@beispiel.de" required />
+              </label>
+            </div>
+
+            <label>
+              Worum geht es?
+              <input type="text" name="subject" placeholder="Zum Beispiel: Vereins-App" required />
+            </label>
+
+            <label>
+              Deine Nachricht
+              <textarea name="message" rows="6" placeholder="Erzähl uns kurz von deiner Idee ..." required />
+            </label>
+
+            <button className="contact-submit" type="submit" disabled={sending}>
+              {sending ? "Wird gesendet ..." : "Anfrage senden"}
+            </button>
+
+            {sendMessage && (
+              <p className="contact-result">{sendMessage}</p>
+            )}
+          </form>
+        </section>
 
       <footer>
         <strong>EasySchmiede</strong>
