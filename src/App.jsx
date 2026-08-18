@@ -318,10 +318,90 @@ function App() {
           </form>
         </section>
 
-      <footer>
-        <strong>EasySchmiede</strong>
-        <span>Software mit Ideen aus der Praxis.</span>
-      </footer>
+        <section className="legal-section" id="impressum">
+          <span className="eyebrow">RECHTLICHES</span>
+          <h2>Impressum</h2>
+
+          <p><strong>Angaben gemäß § 5 DDG</strong></p>
+          <p>
+            Firma Hans-Georg Reimer<br />
+            Inhaber: Hans-Georg Reimer<br />
+            Dederstedter Weg 9<br />
+            06198 Salzatal<br />
+            Deutschland
+          </p>
+
+          <p>
+            Telefon: 0176 31673091<br />
+            E-Mail: <a href="mailto:easyschmiede@t-online.de">easyschmiede@t-online.de</a>
+          </p>
+
+          <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE299677055</p>
+        </section>
+
+        <section className="legal-section" id="datenschutz">
+          <span className="eyebrow">DATENSCHUTZ</span>
+          <h2>Datenschutzerklärung</h2>
+
+          <h3>1. Verantwortlicher</h3>
+          <p>
+            Hans-Georg Reimer<br />
+            Firma Hans-Georg Reimer<br />
+            Dederstedter Weg 9<br />
+            06198 Salzatal<br />
+            E-Mail: <a href="mailto:easyschmiede@t-online.de">easyschmiede@t-online.de</a><br />
+            Telefon: 0176 31673091
+          </p>
+
+          <h3>2. Kontaktformular</h3>
+          <p>
+            Wenn du das Kontaktformular verwendest, verarbeiten wir die von dir
+            eingegebenen Angaben, insbesondere Name, E-Mail-Adresse, Betreff und
+            Nachricht, um deine Anfrage zu bearbeiten und zu beantworten.
+          </p>
+          <p>
+            Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit deine Anfrage
+            der Anbahnung oder Durchführung eines Vertrags dient. In anderen Fällen
+            erfolgt die Verarbeitung auf Grundlage unseres berechtigten Interesses
+            an der Bearbeitung von Anfragen gemäß Art. 6 Abs. 1 lit. f DSGVO.
+          </p>
+
+          <h3>3. Versand über EmailJS</h3>
+          <p>
+            Für den Versand der Kontaktformular-Nachrichten nutzen wir EmailJS.
+            Dabei können die von dir im Formular angegebenen Daten an EmailJS
+            übermittelt und dort im Rahmen der Bereitstellung des Versanddienstes
+            verarbeitet werden.
+          </p>
+          <p>
+            Nach Angaben von EmailJS können personenbezogene Daten unter anderem
+            in den USA verarbeitet werden. EmailJS sieht für Übermittlungen
+            personenbezogener Daten aus der EU unter anderem geeignete
+            Schutzmechanismen wie Standardvertragsklauseln vor.
+          </p>
+
+          <h3>4. Speicherdauer</h3>
+          <p>
+            Wir speichern personenbezogene Daten nur so lange, wie dies zur
+            Bearbeitung deiner Anfrage erforderlich ist oder gesetzliche
+            Aufbewahrungspflichten bestehen.
+          </p>
+
+          <h3>5. Deine Rechte</h3>
+          <p>
+            Du hast im Rahmen der gesetzlichen Voraussetzungen insbesondere das
+            Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der
+            Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem besteht
+            ein Beschwerderecht bei einer zuständigen Datenschutzaufsichtsbehörde.
+          </p>
+        </section>
+
+        <footer>
+          <strong>EasySchmiede</strong>
+          <span>Software mit Ideen aus der Praxis.</span>
+          <a href="#impressum">Impressum</a>
+          <a href="#datenschutz">Datenschutz</a>
+        </footer>
     </main>
   )
 }
