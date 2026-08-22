@@ -179,6 +179,11 @@ const products = [
     text: 'Modulare Vereinsplattform mit Spielplan, Liveticker, Kursen, News und mehr.',
     status: 'Pilotphase',
   },
+  {
+    name: 'EasySecurity',
+    text: 'Diskrete Sicherheits-App mit Alarmfunktion, Notfallkontakten und Standortübermittlung für schnelle Hilfe in kritischen Situationen.',
+    status: 'Prototyp',
+  },
 ]
 
 function App() {
