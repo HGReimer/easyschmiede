@@ -167,6 +167,11 @@ const products = [
     status: 'In Entwicklung',
   },
   {
+    name: 'My Fluffy',
+    text: 'Ein virtuelles Haustier mit Bedürfnissen, Pflege, Wachstum, Spielen und individuell gestaltbaren Lebensräumen.',
+    status: 'In Entwicklung',
+  },
+  {
     name: 'EasyCryptoWatch',
     text: 'Kryptokurse einfach und übersichtlich beobachten.',
     status: 'In Entwicklung',
