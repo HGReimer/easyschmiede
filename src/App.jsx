@@ -156,13 +156,15 @@ function playForgeIntro() {
 const products = [
   {
     name: 'Easy PDF',
-    text: 'PDFs öffnen, bearbeiten, Seiten organisieren und Bilder in PDF umwandeln.',
-    status: 'In Entwicklung',
+    text: 'PDFs auf dem iPhone oder direkt im Browser öffnen, bearbeiten, organisieren und aus Bildern erstellen.',
+    status: 'Im App Store',
+    appStoreUrl: 'https://apps.apple.com/app/id6804483095',
+    webUrl: '/easyschmiede/easy-pdf-web/',
   },
   {
     name: 'EasyVorrat',
     text: 'Vorräte, Lagerorte, Mengen, Haltbarkeit und Einkauf übersichtlich verwalten.',
-    status: 'In Vorbereitung',
+    status: 'In Entwicklung',
   },
   {
     name: 'EasyCryptoWatch',
@@ -258,9 +260,38 @@ function App() {
         <div className="product-grid">
           {products.map((product) => (
             <article className="product-card" key={product.name}>
-              <div className="status">{product.status}</div>
+              <div
+                className={
+                  product.status === 'Im App Store'
+                    ? 'status status-live'
+                    : 'status'
+                }
+              >
+                {product.status}
+              </div>
               <h3>{product.name}</h3>
               <p>{product.text}</p>
+
+              {(product.appStoreUrl || product.webUrl) && (
+                <div className="product-actions">
+                  {product.appStoreUrl && (
+                    <a
+                      className="product-link product-link-primary"
+                      href={product.appStoreUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Im App Store ansehen
+                    </a>
+                  )}
+
+                  {product.webUrl && (
+                    <a className="product-link" href={product.webUrl}>
+                      Im Browser starten
+                    </a>
+                  )}
+                </div>
+              )}
             </article>
           ))}
         </div>
