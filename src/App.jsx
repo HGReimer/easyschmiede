@@ -160,6 +160,17 @@ const products = [
     status: 'Im App Store',
     appStoreUrl: 'https://apps.apple.com/app/id6804483095',
     webUrl: '/easyschmiede/easy-pdf-web/',
+    live: true,
+  },
+  {
+    name: 'EasyWorm',
+    text: 'Der digitale Unterstützerwurm: Jeder bestätigte Euro erzeugt ein persönliches Wurmglied, bewegt EasyWorm einen Kilometer weiter und hilft bei konkreten Alltagsproblemen.',
+    status: 'Pilotphase · live',
+    webUrl: 'https://easyworm.putzteufelsalzatal.chatgpt.site',
+    linkLabel: 'EasyWorm ansehen',
+    live: true,
+    featured: true,
+    external: true,
   },
   {
     name: 'EasyVorrat',
@@ -264,14 +275,11 @@ function App() {
 
         <div className="product-grid">
           {products.map((product) => (
-            <article className="product-card" key={product.name}>
-              <div
-                className={
-                  product.status === 'Im App Store'
-                    ? 'status status-live'
-                    : 'status'
-                }
-              >
+            <article
+              className={product.featured ? 'product-card product-card-featured' : 'product-card'}
+              key={product.name}
+            >
+              <div className={product.live ? 'status status-live' : 'status'}>
                 {product.status}
               </div>
               <h3>{product.name}</h3>
@@ -291,8 +299,13 @@ function App() {
                   )}
 
                   {product.webUrl && (
-                    <a className="product-link" href={product.webUrl}>
-                      Im Browser starten
+                    <a
+                      className={product.featured ? 'product-link product-link-primary' : 'product-link'}
+                      href={product.webUrl}
+                      target={product.external ? '_blank' : undefined}
+                      rel={product.external ? 'noreferrer' : undefined}
+                    >
+                      {product.linkLabel || 'Im Browser starten'}
                     </a>
                   )}
                 </div>
